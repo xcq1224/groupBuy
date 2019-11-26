@@ -1,0 +1,154 @@
+.text-red{
+  color: #ff0000;
+}
+
+view{
+  box-sizing: border-box;
+}
+
+.page_bd{
+  height: 100%;
+}
+
+.header{
+  height: 68rpx;
+  padding-left: 30rpx;
+  line-height: 68rpx;
+  border-bottom: 2rpx solid #ddd;
+  font-weight: bold;
+}
+
+.navbar{
+  height: 72rpx;
+  border-bottom: 2rpx solid #ddd;
+  display: flex;
+}
+.navbar .item{
+  flex: 1;
+}
+.navbar .item:not(:last-of-type){
+  border-right: 2rpx solid #ddd;
+}
+.item-hd{
+  text-align: center;
+  line-height: 70rpx;
+  vertical-align: middle;
+}
+
+.order-list{
+  margin-top: 30rpx;
+  border-top: 2rpx solid #ddd;
+}
+.order{
+  display: flex;
+  border-bottom: 2rpx solid #ddd;
+  padding: 16rpx 30rpx 20rpx;
+  color: #999;
+}
+.order-l{
+  font-size: 24rpx;
+  width: 80rpx;
+  margin-right: 30rpx;
+}
+.order-l image{
+  width: 80rpx;
+  height: 80rpx;  
+}
+.order-r{
+  flex: 1;
+}
+.order .date{
+  float: right;
+}
+.order-address, .order-note, .order-recipient{
+  color: #333;
+  font-weight: bold;
+}
+.order button{
+  width: 140rpx;
+  font-size: 28rpx;
+  padding: 0;
+  float: right;
+  height: 48rpx;
+  line-height: 44rpx;
+  margin: 0;
+}
+
+.mode{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: #ccc;
+  top: 0;
+  opacity: 0.8;
+  z-index: 10;
+}
+.choose{
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  line-height: 60rpx;
+  z-index: 11;
+}
+.choose>view{
+  border-bottom: 2rpx solid #ddd;
+  padding-left: 60rpx;
+  position: relative;
+}
+.choose .active:before{
+  position: absolute;
+  content: "\e639";
+  color: #45c018;
+  left: 16rpx;
+  font-size: 40rpx;
+}
+.modal{
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(204,204,204,0.8);
+}
+.modal-content{
+  background: #fff;
+  margin: 320rpx 80rpx 0;
+}
+.modal-bd{
+  padding: 20px;
+}
+.modal-ft{
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+.modal-ft view{
+  flex: 1;
+  line-height: 48px;
+  text-align: center;
+  font-size: 18px;
+}
+.modal-confirm{
+  color: #45c018;
+  border-left: 1px solid #ddd;
+}
+.modal .weui-cell{
+  position: static;
+  margin-top: 20px;
+}
+.modal .weui-cell input{
+  border: 1px solid #ddd;
+  margin-left: 8px;
+  padding-left: 6px;
+  border-radius: 4px;
+}
+.modal textarea{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: auto;
+  padding: 20rpx;
+  height: 120px;
+}
+.modal-bd{
+  height: 180px;
+}

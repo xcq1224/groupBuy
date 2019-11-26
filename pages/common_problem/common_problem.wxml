@@ -1,0 +1,13 @@
+<view class="container">
+  <view class="page_bd">
+    <view class='main'>
+      <view class='title'>▪ 微信支付：</view>
+      <view>1、微信支付过程中, 微信支付官方平台将收取每笔交易的0.6%的手续费;</view>
+      <view>2、51微购平台额外收取1%的手续费用于平台建设及维护。</view>
+      <view class='title'>▪ 提现：</view>
+        <view>1、店铺通过平台交易所产生的收入，均暂存到51微购上，平台支持账户余额即时（T+1）提现；</view>
+        <view>2、申请提现 -> 等待平台审核（24小时内） -> 金额到账（到账金额自动k扣除共1.6%手续费，参考"微信支付"，提现金额需大于1元）；</view>
+        <view>3、提现到账到交易的微信零钱包。</view>
+      </view>
+  </view>
+</view>

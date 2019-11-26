@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="page_bd">
+    <view class='main'>
+      <view class='weui-cell'>
+        <view class='weui-cell__hd'>
+          <image src='../../images/avatar.png'></image>
+          <view>木子</view>
+        </view>
+        <view class='weui-cell__bd'>阿双方就擦了客家话剧情好看污染物可减轻还让我去空间如何千万人口均衡器千万人口计划千万人口将</view>
+      </view>
+      <view class='weui-cell'>
+        <view class='weui-cell__hd'>
+          <image src='../../images/avatar.png'></image>
+          <view>木子</view>
+        </view>
+        <view class='weui-cell__bd'>阿双方就擦了客家话剧情好看污染物可减轻还让我去空间如何千万人口均衡器千万人口计划千万人口将</view>
+      </view>
+      <view class='weui-cell'>
+        <view class='weui-cell__hd'>
+          <image src='../../images/avatar.png'></image>
+          <view>木子</view>
+        </view>
+        <view class='weui-cell__bd'>阿双方就擦了客家话剧情好看污染物可减轻还让我去空间如何千万人口均衡器千万人口计划千万人口将</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,75 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="page_bd">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">搜索</view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+    </view>
+    <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+      <block wx:for='{{chooseStore}}' wx:key='id'>
+        <navigator url="../store/store?id={{item.id}}" class="weui-cell" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">
+            <view>{{item.name}}</view>
+          </view>
+        </navigator>
+      </block>
+      <view class='empty' hidden='{{chooseStore.length}}'><text>暂无数据</text></view>
+    </view>
+    <swiper class="swiper-box" indicator-dots="true" autoplay="true" circular="true">
+      <block wx:for="{{swiper_array}}" wx:key="*this">
+        <swiper-item>
+          <image mode='widthFix' src="{{item}}"/>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='navbar' data-par='2'>
+      <view class='navbar-item {{tabIndex == 0 ? "active" : ""}}' data-index='0' bindtap='switchTab'>附近团购</view>
+      <view class='navbar-item {{tabIndex == 1 ? "active" : ""}}' data-index='1' bindtap='switchTab'>所有商家</view>
+    </view>
+    <view class='navbar-box'>
+      <view hidden='{{tabIndex != 0}}' class='group-list'>
+        <block wx:for='{{good_list}}' wx:key='good_id'>
+          <navigator class='group' hover-class='none' url='../good_detail/good_detail?good_id={{item.good_id}}'>
+            <view class='group-user'><i class='iconfont icon-touxiang'></i>{{item.store_name}}</view>
+            <view class='group-name'>{{item.good_name}}</view>
+            <view class='group-visits'><text>3-10</text><text>100人浏览</text></view>
+            <view class='img-box'>
+              <block wx:for='{{item.picture_list}}' wx:key='this'>
+                <image src='{{item}}' mode='widthFix'></image>
+              </block>
+            </view>
+            <view class='group-address'><i class="iconfont icon-dingwei"></i><text>{{item.address_name}}</text><text>{{item.distance}}km</text></view>
+          </navigator>
+        </block>
+      </view>
+      <view hidden='{{tabIndex != 1}}' class="company-list">
+        <block wx:for='{{store_list}}' wx:key='id '>
+          <navigator class='company' hover-class='none' url='../store/store?id={{item.id}}'>
+            <view class='company-hd'>
+              <i wx:if='{{!item.logo}}' class="iconfont icon-touxiang"></i>
+              <image wx:if='{{item.logo}}' src='{{item.logo}}'></image>
+              <text>{{item.store_name}}</text>
+            </view>
+            <view class='company-bd'><i class="iconfont icon-dingwei"></i><text class='address'>{{item.address}}</text><text>{{item.distance}}km</text></view>
+          </navigator>
+        </block>
+      </view>
+      <navigator class='application' url='../apply_shop/apply_shop' hover-class='none'>
+        <i class='iconfont icon-application'></i>
+        <view>申请开店</view>
+      </navigator>
+    </view>
+	</view>
+</view>

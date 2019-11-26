@@ -1,0 +1,53 @@
+.page_bd{
+  height: 100%;
+  padding-bottom: 108rpx;
+  box-sizing: border-box;
+}
+.main{
+  width: auto;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+}
+.weui-cell{
+  position: static;
+  border-bottom: 2rpx solid #ddd;
+  font-size: 28rpx;
+}
+.icon-web-icon-{
+  font-size: 160rpx;
+  color: #e4e4e4;
+}
+.weui-textarea{
+  padding: 20rpx 0;
+  height: 260rpx;
+}
+.textarea .weui-label{
+  position: relative;
+  top: -114rpx;
+}
+.weui-btn{
+  font-size: 32rpx;
+}
+image{
+  width: 160rpx;
+  height: 160rpx;
+  margin: 30rpx 0;
+}
+.address{
+  float:left;
+  width:440rpx;
+  height:auto;
+  line-height:40rpx;
+  padding:18rpx 0 14rpx;
+  box-sizing: border-box;
+}
+.address-input{
+  width:440rpx;
+  float:left;
+}
+.icon-dingwei{
+  font-size: 40rpx;
+  float: right;
+  line-height: 75rpx;
+}

@@ -1,0 +1,75 @@
+.page_bd{
+  height: 100%;
+  padding-bottom: 108rpx;
+  box-sizing: border-box;
+}
+.main{
+  width: auto;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+}
+.weui-cell{
+  border-bottom: 2rpx solid #ddd;
+  position: inherit;
+}
+.header{
+  margin-bottom: 40rpx;
+  position: relative;
+}
+.address{
+  margin-bottom: 40rpx;
+  border-top: 2rpx solid #ddd;
+}
+.address .weui-cell__bd view:nth-of-type(2){
+  color: #999;
+  font-size: 24rpx;
+}
+.good-list{
+  border-top: 2rpx solid #ddd;
+}
+.good .weui-cell__bd text{
+  color: #999;
+}
+.count view{
+  float: left;
+  width: 40rpx;
+  border: 2rpx solid #1aad19;
+  border-radius: 4rpx;
+  text-align: center;
+  line-height: 40rpx;
+  margin-top: 4rpx;
+}
+.count view.active{
+  background: #1aad19;
+  color: #fff;
+}
+.count input{
+  float: left;
+  width: 46rpx;
+  text-align: center;
+  line-height: 20rpx;
+  height: 40rpx;
+}
+.total{
+  color: #ff0000;
+  font-size: 32rpx;
+}
+
+.footer{
+  height: 106rpx;
+  display: flex;
+  overflow: hidden;
+  background: #45c018;
+  padding-top: 2rpx;
+  text-align: center;
+  line-height: 106rpx;
+  color: #fff;
+}
+.footer .footer-tabbar{
+  flex: 1;
+}
+.footer .footer-tabbar:nth-of-type(1){
+  color: #45c018;
+  background: #fff;
+}

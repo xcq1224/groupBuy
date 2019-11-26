@@ -1,0 +1,64 @@
+.page_bd{
+  height: 100%;
+  padding-bottom: 108rpx;
+  box-sizing: border-box;
+}
+.main{
+  width: auto;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+}
+.weui-cell{
+  position: static;
+  border-bottom: 2rpx solid #ddd;
+  font-size: 28rpx;
+}
+.logo{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.title{
+  font-weight: bold;
+  padding-left: 30rpx;
+  line-height: 70rpx;
+  border-top: 2rpx solid #ddd;
+  border-bottom: 2rpx solid #ddd;
+  margin-top: 40rpx;
+}
+.evaluation{
+  color: #999;
+}
+.evaluation image{
+  width: 80rpx;
+  height: 80rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.evaluation .weui-cell__hd{
+  width: 210rpx;
+}
+
+
+.footer{
+  height: 108rpx;
+  display: flex;
+  overflow: hidden;
+}
+.footer .footer-tabbar{
+  flex: 1;
+  text-align: center;
+  line-height: 20rpx;
+  font-size: 24rpx;
+}
+.footer .footer-tabbar.active{
+  color: #1aad19;
+}
+.footer .footer-tabbar view{
+  height: 80rpx;
+}
+.footer .footer-tabbar i{
+  font-size: 64rpx;
+  line-height: 80rpx;
+}

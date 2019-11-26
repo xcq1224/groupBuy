@@ -1,0 +1,29 @@
+<view class="container">
+    <view class="page_bd">
+      <view class="weui-cells weui-cells_after-title">
+            <radio-group>
+                <label class="weui-cell weui-check__label" data-id='1' bindtap='choose_address'>
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                        <icon class="weui-icon-checkbox_circle {{address_id == 1 ? 'active' : ''}}" type="success_no_circle" size="23"></icon>
+                    </view>
+                    <view class="weui-cell__bd">
+                      <view>张三 13212342345</view>
+                      <view>湖北省武汉市洪山区大学园路</view>
+                    </view>
+                    <navigator hover-class='none' class='weui-cell__ft' url='../address/address?id=1'><i class="iconfont icon-xinxi"></i></navigator>
+                </label>
+                <label class="weui-cell weui-check__label" data-id='2' bindtap='choose_address'>
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                        <icon class="weui-icon-checkbox_circle {{address_id == 2 ? 'active' : ''}}" type="success_no_circle" size="23"></icon>
+                    </view>
+                    <view class="weui-cell__bd">
+                      <view>张三 13212342345</view>
+                      <view>湖北省武汉市洪山区大学园路</view>
+                    </view>
+                    <navigator hover-class='none' class='weui-cell__ft' url='../address/address?id=2'><i class="iconfont icon-xinxi"></i></navigator>
+                </label>
+            </radio-group>
+        </view>
+        <view class='footer'><button class='weui-btn' type='primary'>保存</button></view>
+    </view>
+</view>

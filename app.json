@@ -1,0 +1,54 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/store/store",
+    "pages/business_info/business_info",
+    "pages/store_setting/store_setting",
+    "pages/publish_product/publish_product",
+    "pages/edit_shop/edit_shop",
+    "pages/balance/balance",
+    "pages/withdraw/withdraw",
+    "pages/amount_details/amount_details",
+    "pages/common_problem/common_problem",
+    "pages/my_comment/my_comment",
+    "pages/commodity_management/commodity_management",
+    "pages/confirm_order/confirm_order",
+    "pages/good_detail/good_detail",
+    "pages/apply_shop/apply_shop",
+    "pages/attention/attention",
+    "pages/address_list/address_list",
+    "pages/address/address",
+    "pages/order_list/order_list",
+    "pages/swipe_test/swipe_test"
+  ],
+  "window":{
+  	"navigationBarBackgroundColor": "#cf4218",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "都市果园",
+    "backgroundTextStyle":"light",
+    "backgroundColor": "#dddddd"
+  },
+  "tabBar": {
+    "color": "#848484",
+    "selectedColor": "#1aad19",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "#e4e4e4",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_active.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/class.png",
+        "selectedIconPath": "images/class_active.png"
+      }
+    ]
+  },
+  "debug": true
+}

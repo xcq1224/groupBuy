@@ -1,0 +1,163 @@
+<view class="container">
+  <view class="page_bd">
+    <swiper indicator-dots="{{indicatorDots}}" current="{{current}}" duration="500">
+    <swiper-item class='item1'>
+    <view class='main'>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">商品名称</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" bindinput='bindKeyInput' data-name='good_name' placeholder="请输入产品名称,不超过20个字" maxlength='20'/>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input textarea">
+          <view class="weui-cell__hd">
+            <view class="weui-label">商品介绍</view>
+          </view>
+          <view class="weui-cell__bd">
+              <textarea class="weui-textarea" bindinput='bindKeyInput' data-name='good_desc' placeholder="请输入产品介绍,不超过200个字"/>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd goods-img">
+            <block wx:for='{{goodImgs}}' wx:key='this'>
+            <view class='good-img'><image src='{{item}}'></image><text class='del' data-index='{{index}}' bindtap='delImg'>×</text></view>
+            </block>
+            <view bindtap='chooseImgs' hidden='{{goodImgs.length == 9}}'><i class='iconfont icon-web-icon-'></i><view>商品图片</view></view>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">规格</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" bindinput='bindKeyInput' data-name='good_spec' placeholder="请填写单份商品的规格,如个/份/件/只等"/>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">价格</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" bindinput='bindKeyInput' data-name='good_price' placeholder="范围: 1.00-9999.99, 单位: 元" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+          <view class="weui-cell__hd">
+            <view class="weui-label">库存</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" bindinput='bindKeyInput' data-name='stock' placeholder="请填写库存数量"/>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+          <view class="weui-cell__hd">
+            <view class="weui-label">限购</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" bindinput='bindKeyInput' data-name='restriction' placeholder="不填写或者填写0则为不限购"/>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+          <view class="weui-cell__hd">
+            <view class="weui-label">设置截止时间</view>
+          </view>
+          <view class="weui-cell__bd weui-input">
+          </view>
+          <view class='weui-cell__ft'>
+            <switch  bindchange="switch1Change"/>
+          </view>
+        </view>
+        <view hidden='{{!switch1}}' class="weui-cell weui-cell_input weui-cell_vcode">
+          <view class="weui-cell__hd">
+            <view class="weui-label">日期</view>
+          </view>
+          <view class="weui-cell__bd weui-input">
+            <picker mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}">
+              <view class="tui-picker-detail">
+                {{dateTimeArray[0][dateTime[0]]}}-{{dateTimeArray[1][dateTime[1]]}}-{{dateTimeArray[2][dateTime[2]]}} {{dateTimeArray[3][dateTime[3]]}}:{{dateTimeArray[4][dateTime[4]]}}
+              </view>
+            </picker>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+          <view class="weui-cell__hd">
+            <view class="weui-label">设置线下自提</view>
+          </view>
+          <view class='weui-cell__bd weui-input'></view>
+          <view class='weui-cell__ft'>
+            <switch bindchange="switch2Change"/>
+          </view>
+        </view>
+        <view hidden='{{!switch2}}' bindtap='changeSwiper' data-index='1' class="weui-cell weui-cell_input weui-cell_access weui-cell_vcode">
+          <view class="weui-cell__hd">
+            <view class="weui-label">设置自提点</view>
+          </view>
+          <view class='weui-cell__bd weui-input'></view>
+          <view class='weui-cell__ft  weui-cell__ft_in-access'>
+            已设置1个
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+          <view class="weui-cell__hd">
+            <view class="weui-label">是否允许快递</view>
+          </view>
+          <view class='weui-cell__bd weui-input'></view>
+          <view class='weui-cell__ft'>
+            <switch bindchange="switch3Change"/>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='footer'>
+      <view>保存并新增</view>
+      <view bindtap='submit'>发布</view>
+    </view>
+    </swiper-item>
+    <swiper-item wx:if='{{current != 0}}' class='item2'>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group>
+              <block wx:for='{{addressList}}' wx:key='this'>
+                <label class="weui-cell weui-check__label" data-index='{{index}}' bindtap='changeAddress'>
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                        <icon class="weui-icon-checkbox_success" type="{{item.checked ? 'success' : 'circle'}}" size="23"></icon>
+                    </view>
+                    <view class="weui-cell__bd">
+                      <view>{{item.contacts}} {{item.phone}}</view>
+                      <view>{{item.address}}</view>
+                    </view>
+                </label>
+              </block>
+          </radio-group>
+      </view>
+      <view class='footer'>
+        <button class='weui-btn' type='primary' bindtap='chooseAddress'>从商店自提点选择</button>
+        <button class='weui-btn' type='primary' bindtap='addAddress'>新增自提点</button>
+        <button class='weui-btn' type='primary' bindtap='changeSwiper' data-index='0'>保存</button>
+      </view>
+    </swiper-item>
+    <swiper-item wx:if='{{current == 2}}' class='item2'>
+      <view class="weui-cells weui-cells_after-title">
+            <radio-group>
+                <block wx:for='{{addressList}}' wx:key='this'>
+                  <label class="weui-cell weui-check__label" data-index='{{index}}' bindtap='changeAddress'>
+                      <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                          <icon class="weui-icon-checkbox_success" type="{{item.checked ? 'success' : 'circle'}}" size="23"></icon>
+                      </view>
+                      <view class="weui-cell__bd">
+                        <view>{{item.contacts}} {{item.phone}}</view>
+                        <view>{{item.address}}</view>
+                      </view>
+                  </label>
+                </block>
+            </radio-group>
+        </view>
+        <view class='footer'>
+          <button class='weui-btn' type='primary' bindtap='changeSwiper' data-index='1'>确定</button>
+        </view>
+    </swiper-item>
+    </swiper>
+  </view>
+</view>

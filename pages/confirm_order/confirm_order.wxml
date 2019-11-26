@@ -1,0 +1,59 @@
+<view class="container">
+    <view class="page_bd">
+      <view class='main'>
+        <view>
+          <picker bindchange="bindPickerChange" value="{{delivery_methods}}" range="{{array}}">
+            <view class='weui-cell header'>
+              <view class='weui-cell__bd'>配送方式</view>
+              <view class='weui-cell__ft weui-cell__ft_in-access'>{{array[delivery_methods]}}</view>
+            </view>
+          </picker>
+        </view>
+        <view>
+          <view hidden='{{delivery_methods}}' class='weui-cell address' bindtap='chooseReceiptAddress'>
+            <view class='weui-cell__bd'>
+              <view hidden='{{!address_info}}'>收货人: {{address_info.contacts}} {{address_info.phone}}</view>
+              <view hidden='{{!address_info}}'>收货地址: {{address_info.address}}</view>
+              <view hidden='{{address_info}}'>选择收货地址</view>
+            </view>
+            <view class='weui-cell__ft weui-cell__ft_in-access'></view>
+          </view>
+          <picker range="{{address_list}}" bindchange='choosePickAddress'>
+          <view hidden='{{!delivery_methods}}' class='weui-cell address'>
+            <view class='weui-cell__bd'>
+              <view hidden='{{!address_info}}'>联系人: {{address_info.contacts}} {{address_info.phone}}</view>
+              <view hidden='{{!address_info}}'>取货地址: {{address_info.address}}</view>
+              <view hidden='{{address_info}}'>选择取货地址</view>
+            </view>
+            <view class='weui-cell__ft weui-cell__ft_in-access'></view>
+          </view>
+          </picker>
+        </view>
+        <view class='good-list'>
+          <block wx:for='{{good_list}}' wx:key='this'>
+            <view class='good weui-cell' data-id='{{item.good_id}}'>
+              <view class='weui-cell__bd'>
+                <view>{{item.good_name}}</view>
+                <view>￥{{item.good_price}}</view>
+              </view>
+              <view class='weui-cell__ft count'>
+                <view class='dis-btn' data-index='{{index}}' bindtap='dec'>-</view>
+                <input value='{{item.num}}' data-index='{{index}}' bindblur='changeNum'></input>
+                <view class='add-btn active' data-index='{{index}}' bindtap='inc'>+</view>
+              </view>
+            </view>
+          </block>
+          <view class='weui-cell'>
+            <view class='weui-cell__bd'>
+              <view>合计</view>
+            </view>
+            <view class='weui-cell__ft total'>{{totalAmount}}元</view>
+          </view>
+        </view>
+      </view>
+      <view class='footer'>
+        <view class='footer-tabbar' bindtap='back'>返回</view>
+        <view class='footer-tabbar' bindtap='pay'>支付</view>
+      </view>
+    </view>
+</view>

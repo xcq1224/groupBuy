@@ -1,0 +1,60 @@
+<view class="container">
+    <view class="page_bd">
+      <view class='navbar'>
+        <view class="item" data-index='1' bindtap='showChoose'>
+          <view class='item-hd'>商品类型<i class="iconfont icon-right-arrow"></i></view>
+          <view class='item-bd'></view>
+        </view>
+        <view class="item" data-index='2' bindtap='showChoose'>
+          <view class='item-hd'>价格<i class="iconfont icon-right-arrow"></i></view>
+          <view class='item-bd'></view>
+        </view>
+        <view class="item">
+          <view class='item-hd' data-index='3' bindtap='showChoose'>库存状态<i class="iconfont icon-right-arrow"></i></view>
+          <view class='item-bd'></view>
+        </view>
+      </view>
+      <view class='mode' hidden='{{isShow == 0}}' bindtap='hideChoose'></view>
+      <view class='choose' hidden='{{isShow != 1}}'>
+        <view class='{{goodType == 0 ? "active": ""}} iconfont' data-index='0' bindtap='goodType'>全部</view>
+        <view class='{{goodType == 1 ? "active": ""}} iconfont' data-index='1' bindtap='goodType'>普通商品</view>
+        <view class='{{goodType == 2 ? "active": ""}} iconfont' data-index='2' bindtap='goodType'>团购中商品</view>
+        <view class='{{goodType == 3 ? "active": ""}} iconfont' data-index='3' bindtap='goodType'>未上架  </view>
+      </view>
+      <view class='choose' hidden='{{isShow != 2}}'>
+        <view class='{{priceInterval == 0 ? "active": ""}} iconfont' data-index='0' bindtap='priceInterval'>全部</view>
+        <view class='{{priceInterval == 1 ? "active": ""}} iconfont' data-index='1' bindtap='priceInterval'>1-50元</view>
+        <view class='{{priceInterval == 2 ? "active": ""}} iconfont' data-index='2' bindtap='priceInterval'>51-100元</view>
+        <view class='{{priceInterval == 3 ? "active": ""}} iconfont' data-index='3' bindtap='priceInterval'>101-300元</view>
+        <view class='{{priceInterval == 4 ? "active": ""}} iconfont' data-index='4' bindtap='priceInterval'>300元以上</view>
+      </view>
+      <view class='choose' hidden='{{isShow != 3}}'>
+        <view class='{{stockStatus == 0 ? "active": ""}} iconfont' data-index='0' bindtap='stockStatus'>全部</view>
+        <view class='{{stockStatus == 1 ? "active": ""}} iconfont' data-index='1' bindtap='stockStatus'>0-20</view>
+        <view class='{{stockStatus == 2 ? "active": ""}} iconfont' data-index='2' bindtap='stockStatus'>21-100</view>
+        <view class='{{stockStatus == 3 ? "active": ""}} iconfont' data-index='3' bindtap='stockStatus'>101-200</view>
+        <view class='{{stockStatus == 4 ? "active": ""}} iconfont' data-index='4' bindtap='stockStatus'>200以上</view>
+      </view>
+      <view class='good-list'>
+        <block wx:for='{{show_list}}' wx:key='good_id'>
+        <view class='good weui-cell' data-id='{{item.good_id}}'>
+          <view class='weui-cell__hd'>
+            <image src='{{item.main_picture}}'></image>
+          </view>
+          <navigator class='weui-cell__bd' hover-class='none' url='{{item.type == 2 ? "../publish_product/publish_product?store_id="+store_id+"&good_id="+item.good_id+"&type=2" : "../good_detail/good_detail?good_id="+item.good_id+"&type="+item.type }}'>
+            <view>{{item.good_name}}</view>
+            <view><text class='text-red'>￥{{item.good_price}}元</text><text class='ml10'>库存: {{item.stock}}</text></view>
+          </navigator>
+          <view class='weui-cell__ft button-sp-area'>
+            <view wx:if='{{item.type == 2}}'>未上架</view>
+            <view wx:if='{{item.type == 1}}'>团购中</view>
+            <view wx:if='{{item.type == 0}}'>普通商品</view>
+            <button wx:if='{{item.type == 0}}' class="button" plain="true" type="primary" size="mini"  data-id='{{item.good_id}}' bindtap='operating' data-type='0' data-index='{{item.index}}'>下架</button>
+            <button wx:if='{{item.type == 1}}' class="button" plain="true" type="primary" size="mini" data-id='{{item.good_id}}' bindtap='operating' data-type='1' data-index='{{item.index}}'>结束</button>
+            <button wx:if='{{item.type == 2}}' class="button" plain="true" type="primary" size="mini" data-id='{{item.good_id}}' bindtap='operating' data-type='2' data-index='{{item.index}}'>上架</button>
+          </view>
+        </view>
+        </block>
+      </view>
+    </view>
+</view>

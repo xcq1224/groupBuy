@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<view class="container" bindtap='cancel'>
+  <view class="cells">
+    <block wx:for='{{attention_list}}' wx:key='this'>
+      <view class='cell' bindlongtap='longtap' catchtap='navigateTo' data-id='{{item.store_id}}'>
+        <image src='{{item.store_logo}}'></image>
+        <view>{{item.store_name}}</view>
+        <text hidden='{{!flag}}' bindtap='unsubscribe' data-id='{{item.store_id}}' data-index='{{index}}'>×</text>
+      </view>
+    </block>
+	</view>
+</view>

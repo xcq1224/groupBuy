@@ -1,0 +1,63 @@
+.header{
+  text-align: center;
+  color: #1aad19;
+  height: 200rpx;
+  border-bottom: 2rpx solid #ddd;
+}
+
+.header image{
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 30rpx;
+  border-radius: 50%;
+}
+
+.order, .store{
+  border-bottom: 2rpx solid #ddd;
+  padding-bottom: 20rpx;
+  padding-top: 10rpx;
+}
+
+.title{
+  padding-left: 30rpx;
+  font-weight: bold;
+  line-height: 60rpx;
+}
+
+.cells{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell{
+  flex: 0 0 33.333%;
+  text-align: center;
+}
+.cell:nth-of-type(n+4){
+  margin-top: 30rpx;
+}
+.icon{
+  position: relative;
+}
+
+.icon i, .icon text{
+  font-size: 60rpx;
+}
+.icon image{
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.store .icon text{
+  color: #ccc;
+}
+.store .store-logo{
+  margin: 16rpx 0 8rpx;
+}
+.weui-cell_access{
+  padding: 10rpx 30rpx;
+  position: static;
+  border-bottom: 1px solid #ddd;
+}
+
+

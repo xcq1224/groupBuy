@@ -1,0 +1,73 @@
+<view class="container">
+    <view class="page_bd">
+    	<view class='sidebar'>
+        <view class='{{tabIndex == 0 ? "active" : ""}}' data-index='0' bindtap='chooseTab'>团购</view>
+        <view class='{{tabIndex == 1 ? "active" : ""}}' data-index='1' bindtap='chooseTab'>商品</view>
+      </view>
+      <view class='main'>
+        <view class='cells' hidden='{{tabIndex == 1}}'>
+          <block wx:for='{{good_list}}' wx:key='good_id'>
+            <view class='cell' wx:if='{{item.good_type}}'>
+              <view class='cell-hd'><image src='{{item.main_picture}}'></image></view>
+              <view class='cell-bd'>
+                <view>{{item.good_name}}</view>
+                <view><text class='sprice'>￥{{item.good_price}}/斤</text></view>
+              </view>
+              <view class='count' wx:if='{{isStore == 0}}'>
+                <view class='dis-btn' data-index='{{index}}' bindtap='reduce'>-</view>
+                <input value='{{item.num}}' data-index='{{index}}' bindchange='changeNum'></input>
+                <view class='add-btn active' data-index='{{index}}' bindtap='add'>+</view>
+              </view>
+              <view class='cell-ft' wx:if='{{isStore == 1}}'>+</view>
+            </view>
+          </block>
+        </view>
+        <view class='cells' hidden='{{tabIndex == 0}}'>
+          <block wx:for='{{good_list}}' wx:key='good_id'>
+            <view class='cell' wx:if='{{!item.good_type}}'>
+              <view class='cell-hd'><image src='{{item.main_picture}}'></image></view>
+              <view class='cell-bd'>
+                <view>{{item.good_name}}</view>
+                <view><text class='sprice'>￥{{item.good_price}}/斤</text></view>
+              </view>
+              <view class='count' wx:if='{{isStore == 0}}'>
+                <view class='dis-btn' data-index='{{index}}' bindtap='reduce'>-</view>
+                <input value='{{item.num}}' data-index='{{index}}' bindchange='changeNum'></input>
+                <view class='add-btn active' data-index='{{index}}' bindtap='add'>+</view>
+              </view>
+              <view class='cell-ft' wx:if='{{isStore == 1}}'>+</view>
+            </view>
+          </block>
+        </view>
+        <navigator wx:if='{{isStore == 1}}' url='../publish_product/publish_product?store_id={{store_id}}' hover-class='none' class='publish-product'>
+          <i class='iconfont icon-tianjia-yin'></i>
+          <view>发布商品</view>
+        </navigator>
+      </view>
+      <view class='footer' hidden='{{totalNum != 0}}'>
+        <view class='footer-tabbar active'>
+          <view><i class="iconfont icon-dianpu"></i></view>
+          <text>店铺</text>
+        </view>
+        <navigator class='footer-tabbar' hover-class="none" url='../order_list/order_list?store_id={{store_id}}'>
+          <view><i class="iconfont icon-dingdan1"></i></view>
+          <text>订单</text>
+        </navigator>
+        <navigator wx:if='{{isStore == 1}}' class='footer-tabbar' open-type='redirect' hover-class="none" url='../store_setting/store_setting?store_id={{store_id}}'>
+          <view><i class="iconfont icon-shezhi"></i></view>
+          <text>设置</text>
+        </navigator>
+        <navigator wx:if='{{isStore == 0}}' class='footer-tabbar' url='../business_info/business_info' hover-class="none">
+          <view><i class="iconfont icon-renyuanjieshao"></i></view>
+          <text>商家信息</text>
+        </navigator>
+      </view>
+      <view class='order-info' hidden='{{totalNum == 0}}'>
+        <view>
+          <text class='clear'>清空</text>
+          <text>共2件,合计￥100</text>
+          <navigator hover-class='none' class='pay' url='../confirm_order/confirm_order'>去结算</navigator>
+        </view>
+      </view>
+    </view>
+</view>

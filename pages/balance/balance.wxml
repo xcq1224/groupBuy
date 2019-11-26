@@ -1,0 +1,13 @@
+<view class="container">
+  <view class="page_bd">
+    <view class='main'>
+      <view class='header'><i class='iconfont icon-daifukuan'></i></view>
+      <view>我的零钱</view>
+      <view class='balance'>￥100.00</view>
+      <navigator class="withdraw" url='../withdraw/withdraw'>申请提现</navigator>
+      <navigator class="details" hover-class='none' url='../amount_details/amount_details'>查看明细</navigator>
+      <navigator class='common_problem' hover-class='none' url='../common_problem/common_problem'>常见问题</navigator>
+      <view class='note'>本服务由51微购提供</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,92 @@
+<view class="container">
+    <view class="page_bd">
+      <view class='main'>
+        <view class='header'>
+          <view class='header-bd'>
+            <view>{{store_info.store_name}}</view>
+            <view>联系电话 : {{store_info.phone}}</view>
+          </view>
+          <navigator class='header-ft' hover-class='none' url='../edit_shop/edit_shop?store_id={{store_id}}'>编辑</navigator>
+        </view>
+        <view class='order'>
+          <view class='title'>店铺订单</view>
+          <view class='cells'>
+            <view class='cell'>
+              <navigator hover-class="none">
+                <view class='icon'>
+                  <i class='iconfont icon-daifukuan'></i>
+                  <view hidden='{{!store_info.payment_num}}' class="weui-badge"style="position: absolute;top: 0;right: 70rpx;">{{store_info.payment_num}}</view>
+                </view>
+                <view>待付款</view>
+              </navigator>
+            </view>
+            <view class='cell'>
+              <navigator hover-class='none'>
+                <view class='icon'>
+                  <i class='iconfont icon-daifahuo'></i>
+                  <view hidden='{{!store_info.ship_num}}' class="weui-badge"style="position: absolute;top: 0;right: 70rpx;">{{store_info.ship_num}}</view>
+                </view>
+                <view>待发货</view>
+              </navigator>
+            </view> 
+            <view class='cell'>
+              <navigator hover-class='none'>
+                <view class='icon'>
+                  <i class='iconfont icon-daishouhuo'></i>
+                  <view hidden='{{!store_info.receipt_num}}' class="weui-badge"style="position: absolute;top: 0;right: 70rpx;">{{store_info.receipt_num}}</view>
+                </view>
+                <view>待收货</view>
+              </navigator>
+            </view>
+          </view>
+        </view>
+        <view class="weui-cells ">
+          <navigator class="weui-cell" hover-class='none' url='../publish_product/publish_product?store_id={{store_id}}'>
+              <view class="weui-cell__bd">发布商品</view>
+              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </navigator>
+          <navigator class="weui-cell" url='../balance/balance' hover-class='none'>
+              <view class="weui-cell__bd">余额</view>
+              <view class="weui-cell__ft weui-cell__ft_in-access">提现</view>
+          </navigator>
+          <navigator class="weui-cell" hover-class='none' url='../commodity_management/commodity_management?store_id={{store_id}}'>
+              <view class="weui-cell__bd">商品管理</view>
+              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </navigator>
+          <navigator class="weui-cell" url='../my_comment/my_comment' hover-class='none'>
+              <view class="weui-cell__bd">我的评价</view>
+              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </navigator>
+          <view class="weui-cell" bindtap='getQR_code'>
+              <view class="weui-cell__bd">我的二维码</view>
+              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </view>
+        </view>
+      </view>
+      <view class='modal' hidden='{{QR_flag}}'>
+        <view class='modal-content'>
+          <view class='modal-bd'>
+            <image class='QR_code' src='{{store_info.QR_code}}'></image>
+          </view>
+          <view class='modal-ft'>
+            <view class='modal-confirm' bindtap='hideModal'>确定</view>
+          </view>
+        </view>
+      </view>
+      <view class='footer'>
+        <navigator class='footer-tabbar' hover-class="none" open-type='redirect' url='../store/store?id={{store_id}}'>
+          <view><i class="iconfont icon-dianpu"></i></view>
+          <text>店铺</text>
+        </navigator>
+        <navigator class='footer-tabbar' hover-class="none" url='../order_list/order_list?store_id={{store_id}}'>
+          <view><i class="iconfont icon-dingdan1"></i></view>
+          <text>订单</text>
+        </navigator>
+        <view class='footer-tabbar active'>
+          <view><i class="iconfont icon-shezhi"></i></view>
+          <text>设置</text>
+        </view>
+      </view>
+      
+    </view>
+</view>

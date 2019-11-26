@@ -1,0 +1,77 @@
+<view class="container">
+    <view class="page_bd">
+    	<view class='header'>
+        <image mode='widthFix' src='{{avatarUrl}}'></image>
+        <view>{{nickName}}</view>
+      </view>
+      <view class='order'>
+        <view class='title'>我的订单</view>
+        <view class='cells'>
+          <view class='cell'>
+            <navigator hover-class="none" url='../order_list/order_list?status=1'>
+              <view class='icon'>
+                <i class='iconfont icon-daifukuan'></i>
+                <view hidden='{{!payment_num}}' class="weui-badge"style="position: absolute;top: 0;right: 70rpx;">{{payment_num}}</view>
+              </view>
+              <view>待付款</view>
+            </navigator>
+          </view>
+          <view class='cell'>
+            <navigator hover-class='none' url='../order_list/order_list?status=2'>
+              <view class='icon'>
+                <i class='iconfont icon-daifahuo'></i>
+                <view hidden='{{!ship_num}}' class="weui-badge"style="position: absolute;top: 0;right: 70rpx;">{{ship_num}}</view>
+              </view>
+              <view>待发货</view>
+            </navigator>
+          </view>
+          <view class='cell'>
+            <navigator hover-class='none' url='../order_list/order_list?status=3'>
+              <view class='icon'>
+                <i class='iconfont icon-daishouhuo'></i>
+                <view hidden='{{!receipt_num}}' class="weui-badge"style="position: absolute;top: 0;right: 70rpx;">{{receipt_num}}</view>
+              </view>
+              <view>待收货</view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+      <view class='store'>
+        <view class='title'>我的店铺</view>
+        <view class='cells'>
+          <block wx:for='{{storeList}}' wx:key='id'>
+          <view class='cell'>
+            <navigator hover-class='none' url='../store/store?id={{item.id}}'>
+              <view class='icon'>
+                <text hidden='{{item.logo}}' class='iconfont icon-touxiang'></text>
+                <image hidden='{{!item.logo}}' class='store-logo' src='{{item.logo}}'></image>
+                <view hidden='{{!item.num}}' class="weui-badge"style="position: absolute;top: 0;right: 70rpx;">{{item.num}}</view>
+              </view>
+              <view>{{item.store_name}}</view>
+            </navigator>
+          </view>
+          </block>
+          <view class='cell'>
+            <navigator hover-class='none' url='../apply_shop/apply_shop'>
+              <view class='icon'>
+                <text class='iconfont icon-application'></text>
+              </view>
+              <view>申请店铺</view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+      <navigator class='title weui-cell weui-cell_access' hover-class='none' url='../attention/attention'>
+      <view class='weui-cell__bd'>我的关注</view>
+      <view class='weui-cell__ft weui-cell__ft_in-access'></view>
+      </navigator>
+      <view class='title weui-cell weui-cell_access' bindtap='chooseAddress'>
+      <view class='weui-cell__bd'>收货地址</view>
+      <view class='weui-cell__ft weui-cell__ft_in-access'></view>
+      </view>
+      <navigator class='title weui-cell weui-cell_access' hover-class='none' url='../attention/attention'>
+      <view class='weui-cell__bd'>帮助中心</view>
+      <view class='weui-cell__ft weui-cell__ft_in-access'></view>
+      </navigator>
+    </view>
+</view>

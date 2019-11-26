@@ -1,0 +1,70 @@
+<view class="container">
+  <view class="page_bd">
+    <view class='main'>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__hd">
+            <view class="weui-label">店铺名称</view>
+          </view>
+          <view class="weui-cell__bd">非空间</view>
+        </view>
+        <view class="weui-cell">
+          <view class="weui-cell__hd">
+            <view class="weui-label">店铺Logo</view>
+          </view>
+          <view class="weui-cell__bd">
+            <image class='logo' src='../../images/avatar.png'></image>
+          </view>
+        </view>
+        <view class="weui-cell">
+          <view class="weui-cell__hd">
+            <view class="weui-label">联系电话</view>
+          </view>
+          <view class="weui-cell__bd">13121231232</view>
+        </view>
+        <view class="weui-cell">
+          <view class="weui-cell__hd">
+            <view class="weui-label">地址</view>
+          </view>
+          <view class="weui-cell__bd">湖北省武汉市江夏区大学园路</view>
+        </view>
+        <view class="weui-cell">
+          <view class="weui-cell__hd">
+            <view class="weui-label">客服</view>
+          </view>
+          <view class="weui-cell__bd">微信ww9999</view>
+        </view>
+        <view class="weui-cell">
+          <view class="weui-cell__hd">
+            <view class="weui-label">公告</view>
+          </view>
+          <view class="weui-cell__bd">有任何事情请咨询客服的微信x谢谢! 咨询时间09:00-21:00</view>
+        </view>
+      </view>
+      <view class='title'>评价</view>
+      <view class='weui-cell evaluation'>
+        <view class='weui-cell__hd'>
+          <image src='../../images/avatar.png'></image>木子
+        </view>
+        <view class='weui-cell__bd'>
+          <view>东西还可以！</view>
+          <view>2018-03-18 18:40</view>
+        </view>
+      </view>
+    </view>
+    <view class='footer'>
+      <view class='footer-tabbar'>
+        <view><i class="iconfont icon-dianpu"></i></view>
+        <text>店铺</text>
+      </view>
+      <navigator class='footer-tabbar' hover-class="none" url='../order_list/order_list'>
+        <view><i class="iconfont icon-dingdan1"></i></view>
+        <text>订单</text>
+      </navigator>
+      <navigator class='footer-tabbar active' url='../business_info/business_info' hover-class="none">
+        <view><i class="iconfont icon-renyuanjieshao"></i></view>
+        <text>商家信息</text>
+      </navigator>
+    </view>
+  </view>
+</view>

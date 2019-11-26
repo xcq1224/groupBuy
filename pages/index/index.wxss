@@ -1,0 +1,187 @@
+/**index.wxss**/
+
+page{
+  background: #fff;
+}
+
+.weui-search-bar{
+  background: #fff;
+}
+.searchbar-result{
+  max-height:500rpx;
+  overflow:auto;
+  font-size: 28rpx;
+  margin-top: 0;
+  position: static;
+}
+.searchbar-result .weui-cell{
+  padding: 14rpx 30rpx;
+}
+.searchbar-result .empty{
+  text-align: center;
+  color: #ccc;
+  line-height: 80rpx;
+}
+.swiper-box {
+  width: 100%;
+  height: 375rpx;
+}
+
+swiper-item image {
+  display: block;
+  width: 100%;
+}
+
+.navbar{
+  display: flex;
+  height: 80rpx;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+}
+
+.navbar .navbar-item{
+  flex: 1;
+  text-align: center;
+  line-height: 80rpx;
+  position: relative;
+}
+
+.navbar .navbar-item.active{
+  color: #1aad19;
+}
+
+.navbar .navbar-item.active:after{
+  content: '';
+  position: absolute;
+  height: 2px;
+  background: #1aad19;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+.saller-box {
+  background: #fff;
+  overflow: hidden;
+}
+
+.saller-item {
+  width: 25%;
+  float: left;
+  margin: 30rpx 0;
+  text-align: center;
+}
+
+.saller-item image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.saller-item text {
+  display: block;
+  color: #aaa;
+}
+
+.group{
+  padding: 20rpx 30rpx;
+  border-bottom: 1px solid #ddd;
+}
+
+.group .group-user{
+  color: #45c018;
+}
+
+.group .group-user i{
+  font-size: 40rpx;
+  margin-right: 16rpx;
+}
+
+.group .group-visits{
+  font-size: 24rpx;
+  color: #ccc;
+  margin-bottom: 10rpx;
+}
+
+.group .group-visits text:nth-of-type(1){
+  margin-right: 20rpx;
+}
+
+.group .img-box image{
+  width: 190rpx;
+  margin-right: 30rpx;
+}
+
+.group .group-address{
+  color: #ccc;
+}
+
+.company{
+  border-bottom: 1px solid #ddd;
+  height: 120rpx;
+  padding: 10rpx 30rpx;
+  color: #ccc;
+}
+.company image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.company-hd{
+  color: #1aad19;
+}
+
+.company-hd i{
+  padding-right: 10rpx;
+  font-size: 40rpx;
+}
+
+.company-bd i, .group .group-address i{
+  padding-right: 10rpx;
+  font-size: 30rpx;
+}
+.company-bd text:nth-of-type(1), .group-address text:nth-of-type(1){
+  padding-right: 20rpx;
+}
+.application{
+  position: fixed;
+  bottom: 30rpx;
+  right: 30rpx;
+  color: #45c018;
+  text-align: center;
+  line-height: 40rpx;
+}
+.application i{
+  font-size: 72rpx;
+  color: #45c018;
+}
+.address{
+  max-width:540rpx;
+  display:inline-block;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  vertical-align:middle;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 文本溢出处理 */
+
+.new-title text {
+  width: 450rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}

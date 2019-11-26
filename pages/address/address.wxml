@@ -1,0 +1,29 @@
+<view class="container">
+    <view class="page_bd">
+      <view class="weui-cells weui-cells_after-title">
+        <view class='weui-cell'>
+          <view class='weui-cell__hd'>联系人</view>
+          <view class='weui-cell__bd'><input class='weui-input' value='张三'></input></view>
+          <view class='weui-cell__ft'><i class='iconfont icon-tongxunlu'></i></view>
+        </view>
+        <view class='weui-cell'>
+          <view class='weui-cell__hd'>联系方式</view>
+          <view class='weui-cell__bd'><input class='weui-input' value='13212312312'></input></view>
+        </view>
+        <view class='weui-cell'>
+          <view class='weui-cell__hd'>选择地区</view>
+          <view class='weui-cell__bd'><input class='weui-input' value='{{provinceName}} {{cityName}} {{countyName}}'></input></view>
+          <view class='weui-cell__ft' bindtap='choose'><i class='iconfont icon-dingwei'></i></view>
+        </view>
+        <view class='weui-cell'>
+          <view class='weui-cell__hd'>详细地址</view>
+          <view class='weui-cell__bd'><input class='weui-input' value='湖北省武汉市江夏区大学园路'></input></view>
+        </view>
+        <view class='weui-cell'>
+          <view class='weui-cell__hd'>邮政编码</view>
+          <view class='weui-cell__bd'><input class='weui-input' value='430000'></input></view>
+        </view>
+      </view>
+      <view class='footer'><button class='weui-btn' type='primary'>保存</button></view>
+    </view>
+</view>

@@ -1,0 +1,124 @@
+view{
+  box-sizing: border-box;
+}
+
+.page_bd{
+  height: 100%;
+}
+
+.header{
+  height: 90rpx;
+  padding: 16rpx 60rpx 0;
+}
+.header-desc{
+  display: flex;
+  font-size: 24rpx;
+}
+.header-desc view{
+  flex: 1;
+  text-align: center;
+}
+.header-desc view.active{
+  color: #1aad19;
+}
+.header-bar{
+  display: flex;
+  padding: 0 90rpx;
+}
+.header-bar view:nth-of-type(2n+1){
+  width: 20rpx;
+  height: 20rpx;
+  background: #ccc;
+  border-radius: 50%;
+}
+.header-bar view:nth-of-type(2n){
+  flex: 1;
+  height: 2rpx;
+  background: #ccc;
+  margin: 8rpx 4rpx;
+}
+.header-bar view.active{
+  background: #1aad19;
+}
+
+.picture{
+  height: 380rpx;
+  text-align: center;
+  padding-top: 24rpx;
+}
+.picture .status0{
+  width: 320rpx;
+  height: 320rpx;
+}
+.picture .status1{
+  width: 284rpx;
+  height: 292rpx;
+}
+.picture .status2{
+  width: 248rpx;
+  height: 260rpx;
+}
+
+.form{
+  padding: 0 60rpx;
+}
+.form>view{
+  overflow: hidden;
+  margin-bottom: 36rpx;
+}
+.form label{
+  float: left;
+  width: 140rpx;
+  padding-top: 6rpx;
+}
+.form input{
+  border: 2rpx solid #ddd;
+  text-align: center;
+}
+.ID-box{
+  float: left;
+}
+.ID-box image{
+  width: 116rpx;
+  height: 116rpx;
+}
+.ID-card i{
+  font-size: 68rpx;
+  color: #ddd;
+  line-height: 70rpx;
+}
+.ID-note{
+  color: #ff0000;
+  margin-top: 10rpx;
+}
+.note{
+  margin-top: 16rpx;
+  color: #ccc;
+  font-size: 24rpx;
+  margin-left: 10rpx;
+}
+.status3-box{
+  padding: 0 72rpx;
+  line-height: 70rpx;
+}
+.QR-code{
+  width: 200rpx;
+  height: 48rpx;
+  border: 2rpx solid #1aad19;
+  display: inline-block;
+  line-height: 48rpx;
+  text-align: center;
+  border-radius: 8rpx;
+  margin-left: 10rpx;
+  color: #1aad19;
+}
+.status3-box navigator{
+  height: 76rpx;
+  line-height: 76rpx;
+  text-align: center;
+  background: #1aad19;
+  color: #fff;
+  font-size: 36rpx;
+  border-radius: 8rpx;
+  margin-top: 40rpx;
+}

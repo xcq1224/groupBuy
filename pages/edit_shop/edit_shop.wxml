@@ -1,0 +1,62 @@
+<view class="container">
+  <view class="page_bd">
+    <view class='main'>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">店铺名称</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input bindinput='bindKeyInput' data-name='store_name' class="weui-input" placeholder="请输入店铺名称" value='{{store_info.store_name}}'/>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">店铺Logo</view>
+          </view>
+          <view class="weui-cell__bd">
+            <i wx:if='{{!store_info.logo}}' bindtap='chooseImage' class='iconfont icon-web-icon-'></i>
+            <image wx:if='{{store_info.logo}}' bindtap='chooseImage' src='{{store_info.logo}}'></image>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">联系电话</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input bindinput='bindKeyInput' data-name='phone' class="weui-input" placeholder="请输入手机号" value='{{store_info.phone}}'/>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">地址</view>
+          </view>
+          <view class="weui-cell__bd" bindtap='chooseAddress'>
+            <text hidden='{{!store_info.address_name}}' class="weui-input address">{{store_info.address_name}}</text>
+            <input hidden='{{store_info.address_name}}' class="weui-input address-input" placeholder='请选择地址' disabled='true' />
+            <i class='iconfont icon-dingwei'></i>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+          <view class="weui-cell__hd">
+            <view class="weui-label">客服</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input bindinput='bindKeyInput' data-name='customer_service' class="weui-input" placeholder="请输入联系人微信号" value='{{store_info.customer_service}}' />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input textarea">
+          <view class="weui-cell__hd">
+            <view class="weui-label">公告</view>
+          </view>
+          <view class="weui-cell__bd">
+              <textarea bindinput='bindKeyInput' data-name='announcement' class="weui-textarea" placeholder="请输入公告" value='{{store_info.announcement}}'/>
+          </view>
+        </view>
+      </view>
+      <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" bindtap="submit">保存</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,24 @@
+.page_bd{
+  height: 100%;
+  padding-bottom: 108rpx;
+  box-sizing: border-box;
+}
+.main{
+  width: auto;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+}
+.weui-cell{
+  position: static;
+  border-bottom: 2rpx solid #ddd;
+  font-size: 28rpx;
+}
+.weui-cell__hd{
+  margin-right: 40rpx;
+  text-align: center;
+}
+.weui-cell__hd image{
+  width: 80rpx;
+  height: 80rpx;
+}

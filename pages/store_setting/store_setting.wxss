@@ -1,0 +1,167 @@
+.page_bd{
+  height: 100%;
+  padding-bottom: 108rpx;
+  box-sizing: border-box;
+}
+.main{
+  width: auto;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+}
+.header{
+  height: 100rpx;
+  border-bottom: 2rpx solid #ddd;
+  padding: 0 30rpx;
+}
+.header-bd{
+  float: left;
+  line-height: 40rpx;
+  padding-top: 10rpx;
+}
+.header-bd view:nth-of-type(1){
+  color: #000;
+  font-weight: bold;
+}
+.header-ft{
+  margin-top: 16rpx;
+  float: right;
+  width: 80rpx;
+  height: 44rpx;
+  border: 2rpx solid #45c018;
+  color: #45c018;
+  border-radius: 8rpx;
+  text-align: center;
+}
+
+.order{
+  padding-bottom: 20rpx;
+  padding-top: 10rpx;
+}
+
+.title{
+  padding-left: 30rpx;
+  font-weight: bold;
+  line-height: 60rpx;
+}
+
+.cells{
+  display: flex;
+}
+
+.cell{
+  flex: 1;
+  text-align: center;
+}
+
+.icon{
+  position: relative;
+}
+
+.icon i{
+  font-size: 60rpx;
+}
+
+.store .icon i{
+  color: #ccc;
+}
+.weui-cells{
+  margin-top: 0;
+  font-size: 28rpx;
+  font-weight: bold;
+  border: none;
+}
+.weui-cell{
+  position: static;
+  border-bottom: 2rpx solid #ddd;
+}
+.weui-cell__ft{
+  color: #ffcc00;
+}
+
+.footer{
+  height: 108rpx;
+  display: flex;
+  overflow: hidden;
+}
+.footer .footer-tabbar{
+  flex: 1;
+  text-align: center;
+  line-height: 20rpx;
+  font-size: 24rpx;
+}
+.footer .footer-tabbar.active{
+  color: #1aad19;
+}
+.footer .footer-tabbar view{
+  height: 80rpx;
+}
+.footer .footer-tabbar i{
+  font-size: 64rpx;
+  line-height: 80rpx;
+}
+.mode{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: #ccc;
+  top: 0;
+  opacity: 0.8;
+}
+.choose{
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  line-height: 60rpx;
+}
+.choose>view{
+  border-bottom: 2rpx solid #ddd;
+  padding-left: 60rpx;
+  position: relative;
+}
+.choose .active:before{
+  position: absolute;
+  content: "\e639";
+  color: #45c018;
+  left: 16rpx;
+  font-size: 40rpx;
+}
+.modal{
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(204,204,204,0.8);
+}
+.modal-content{
+  background: #fff;
+  margin: 320rpx 80rpx 0;
+}
+.modal-bd{
+  padding: 20px;
+}
+.modal-ft{
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+.modal-ft view{
+  flex: 1;
+  line-height: 48px;
+  text-align: center;
+  font-size: 18px;
+}
+.modal-confirm{
+  color: #45c018;
+  border-left: 1px solid #ddd;
+}
+.QR_code{
+  width: 300rpx;
+  height: 300rpx;
+  margin-top: 40rpx;
+}
+.modal-bd{
+  height: 180px;
+  text-align: center;
+}

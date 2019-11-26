@@ -1,0 +1,73 @@
+<view class="container">
+    <view class="page_bd">
+    	<view class='main'>
+        <view class='header'>
+          <view class='header-logo'><image src='{{good_info.logo}}'></image></view>
+          <view class='header-text'>{{good_info.store_name}}</view>
+          <view class='attention' bindtap='attention'><i class="iconfont icon-{{is_attention ? '31guanzhu1xuanzhong' : 'guanzhu'}}"></i></view>
+          <button class='header-icon iconfont icon-zhuanfa' open-type="share"></button>
+          <view class='header-icon'><i class="iconfont icon-bhjqrqiandao"></i></view>
+        </view>
+        <view class='good'>
+          <view class="good-hd">{{good_info.good_name}}</view>
+          <view class='good-bd'><text>02-20</text><text class='visits'>180人浏览</text></view>
+          <view class='good-ft'>
+            <view>
+              <image src='{{good_info.main_picture}}'></image>
+              <view class='good-info'>
+                <view class='good-price'>￥{{good_info.good_price}}/斤</view>
+                <view class='good-stock'>库存 : {{good_info.stock}}</view>
+              </view>
+            </view>
+            <view class='count'>
+              <view class='dis-btn' bindtap='dec'>-</view>
+              <input value='{{num}}' type='number' bindblur='changeNum'></input>
+              <view class='add-btn active' bindtap='inc'>+</view>
+            </view>
+          </view>
+        </view>
+        <view hidden='{{false}}' class='good-desc'>{{good_info.good_desc}}</view>
+        <view hidden='{{true}}' class='good-desc-unfold good-desc-shrink iconfont good-desc'><text>鸡蛋就是平常所说的百香果,有"果汁之王"的称号，有黄色和紫色两个品种,蛋黄果为橙黄色,果肉颜色接近蛋黄;故而得名鸡蛋就是平常所说的百香果,有"果汁之王"的称号，有黄色和紫色两个品种,蛋黄果为橙黄色,果肉颜色接近蛋黄;故而得名。</text></view>
+        <view class='good-pictures'>
+          <block wx:for='{{good_info.picture_list}}' wx:key='this'>
+            <image src='{{item}}'></image>
+          </block>
+        </view>
+        <view class='address cell'><i class="iconfont icon-dingwei"></i><text>{{good_info.address_name}}</text></view>
+        <view class='cell'>参与记录{{good_info.createtime}}</view>
+        <block wx:for='{{purchase_history}}' wx:key='this'>
+          <view class='cell recorde'>
+            <view class='recorde-l active'><i class="iconfont icon-touxiang"></i><text>+{{item.good_num}}</text></view>
+            <view class="recorde-r">{{item.createtime}}</view>
+          </view>
+        </block>
+      </view>
+      <view class='footer'>
+        <block wx:if='{{!status}}'>
+          <navigator hover-class="none" class='active' url="../store/store?id={{good_info.store_id}}">
+            <view><i class="iconfont icon-dianpu"></i></view>
+            <text>店铺</text>
+          </navigator>
+          <view hover-class="none" class='payfor' bindtap='account'>
+            <text>去结算</text>
+          </view>
+        </block>
+        <block wx:if='{{status === "0"}}'>
+          <view class='payfor default' bindtap='operating' data-type='0'>
+            <text>下架</text>
+          </view>
+          <navigator hover-class="none" class='payfor' url='../publish_product/publish_product?store_id={{good_info.store_id}}&good_id={{good_info.good_id}}&type=1'>
+            <text>修改</text>
+          </navigator>
+        </block>
+        <block wx:if='{{status === "1"}}'>
+          <view class='payfor default' bindtap='operating' data-type='1'>
+            <text>结束</text>
+          </view>
+          <navigator hover-class="none" class='payfor' url='../publish_product/publish_product?store_id={{good_info.store_id}}&good_id={{good_info.good_id}}&type=1'>
+            <text>修改</text>
+          </navigator>
+        </block>
+      </view>
+    </view>
+</view>

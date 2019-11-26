@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="page_bd">
+    <view class='main'>
+      <view class='header'>转到微信钱包</view>
+      <view>提取金额：</view>
+      <view class='amount'>
+        <text>￥</text>
+        <input value='100'></input>
+      </view>
+      <view>可提取余额：￥100.00，<text class='withdraw'>全部提现</text></view>
+      <view>自动扣除1.6%手续费，24小时到账</view>
+      <button class='weui-btn' type='primary'>提现</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,145 @@
+.page_bd{
+  height: 100%;
+  padding-bottom: 108rpx;
+  box-sizing: border-box;
+}
+.sidebar{
+  width: 180rpx;
+  height: 100%;
+  background: #f2f2f2;
+  float: left;
+}
+.sidebar view{
+  height: 96rpx;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  line-height: 96rpx;
+}
+
+.sidebar view.active{
+  background: #fff;
+}
+
+.main{
+  width: auto;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+}
+.cells{
+  overflow: hidden;
+}
+
+.cell{
+  padding: 20rpx;
+  border-bottom: 2rpx solid #ddd;
+  overflow: hidden;
+}
+.cell>view{
+  float: left;
+}
+.cell image{
+  width: 100rpx;
+  height: 100rpx;
+  display: block;
+  margin-right: 20rpx;
+}
+.cell .cell-bd view:nth-of-type(2){
+  font-size: 24rpx;
+  color: #ccc;
+}
+.cell .sprice{
+  color: #ff0000;
+  font-size: 30rpx;
+  font-weight: bold;
+  line-height: 60rpx;
+  margin-right: 10rpx;
+}
+
+.cell .cell-ft{
+  float: right;
+  width: 68rpx;
+  height: 36rpx;
+  border: 2rpx solid #1aad19;
+  border-radius: 4rpx;
+  text-align: center;
+  line-height: 36rpx;
+  color: #1aad19;
+  margin: 6rpx 6rpx 0 0;
+}
+.footer{
+  height: 108rpx;
+  display: flex;
+  overflow: hidden;
+}
+.footer .footer-tabbar{
+  flex: 1;
+  text-align: center;
+  line-height: 20rpx;
+  font-size: 24rpx;
+}
+.footer .footer-tabbar.active{
+  color: #1aad19;
+}
+.footer .footer-tabbar view{
+  height: 80rpx;
+}
+.footer .footer-tabbar i{
+  font-size: 64rpx;
+  line-height: 80rpx;
+}
+.cell .count{
+  float: right;
+}
+.count view{
+  float: left;
+  width: 40rpx;
+  border: 2rpx solid #1aad19;
+  border-radius: 4rpx;
+  text-align: center;
+  line-height: 40rpx;
+  margin-top: 4rpx;
+}
+.count view.active{
+  background: #1aad19;
+  color: #fff;
+}
+.count input{
+  float: left;
+  width: 46rpx;
+  text-align: center;
+  line-height: 20rpx;
+  height: 40rpx;
+}
+/* 发布商品 */
+.publish-product{
+  position: absolute;
+  bottom: 30rpx;
+  right: 30rpx;
+  text-align: center;
+  color: #45c018;
+  line-height: 40rpx;
+}
+.publish-product i{
+  font-size: 60rpx;
+}
+
+.order-info{
+  background: #f2f2f2;
+  height: 106rpx;
+  line-height: 106rpx;
+  color: #999;
+  margin-top: 2rpx;
+}
+.order-info .clear{
+  padding: 0 30rpx;
+}
+.pay{
+  height: 100%;
+  width: 260rpx;
+  background: #45c018;
+  color: #fff;
+  float: right;
+  text-align: center;
+  font-size: 32rpx;
+}

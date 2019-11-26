@@ -1,0 +1,25 @@
+.cells{
+  padding: 40rpx 0;
+  overflow: hidden;
+}
+.cell{
+  float: left;
+  width: 200rpx;
+  height: 220rpx;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin: 20rpx 20rpx 20rpx 25rpx;
+}
+.cell image{
+  width: 144rpx;
+  height: 144rpx;
+  border-radius: 50%;
+}
+.cell text{
+  color: #ff0000;
+  font-size: 40rpx;
+  position: absolute;
+  top: -20rpx;
+  right: 10rpx;
+}

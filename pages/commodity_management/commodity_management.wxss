@@ -1,0 +1,94 @@
+.text-red{
+  color: #ff0000;
+}
+
+view{
+  box-sizing: border-box;
+}
+
+.page_bd{
+  height: 100%;
+}
+
+.navbar{
+  height: 72rpx;
+  border-bottom: 2rpx solid #ddd;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  background: #fff;
+}
+.navbar .item{
+  flex: 1;
+}
+.navbar .item:not(:last-of-type){
+  border-right: 2rpx solid #ddd;
+}
+.item-hd{
+  text-align: center;
+  line-height: 70rpx;
+  vertical-align: middle;
+}
+
+.good-list{
+  padding-top: 100rpx;
+  border-bottom: 2rpx solid #ddd;
+}
+.good{
+  display: flex;
+  border-top: 2rpx solid #ddd;
+  position: inherit;
+}
+.good .weui-cell__hd image{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+}
+.good .weui-cell__bd view:nth-of-type(2){
+  color: #999;
+  font-size: 24rpx;
+}
+.ml10{
+  margin-left: 20rpx;
+}
+.good .weui-cell__ft view:nth-of-type(1){
+  color: #f93;
+}
+.good .button{
+  width:100rpx;
+  padding:0 0;
+  height:50rpx;
+  line-height:45rpx;
+  font-size: 24rpx;
+}
+
+.mode{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: #ccc;
+  top: 0;
+  opacity: 0.8;
+  z-index: 1000;
+}
+.choose{
+  position: fixed;
+  background: #fff;
+  width: 100%;
+  line-height: 60rpx;
+  z-index: 1001;
+  top: 74rpx;
+}
+.choose>view{
+  border-bottom: 2rpx solid #ddd;
+  padding-left: 60rpx;
+  position: relative;
+  color: #666;
+}
+.choose .active:before{
+  position: absolute;
+  content: "\e639";
+  color: #45c018;
+  left: 16rpx;
+  font-size: 40rpx;
+}

@@ -1,0 +1,86 @@
+<view class="container">
+    <view class="page_bd">
+      <view class='header'>店铺订单</view>
+      <view class='navbar'>
+        <view class="item" data-index='1' bindtap='showChoose'>
+          <view class='item-hd'>订单状态<i class="iconfont icon-right-arrow"></i></view>
+          <view class='item-bd'></view>
+        </view>
+        <view class="item" data-index='2' bindtap='showChoose'>
+          <view class='item-hd'>是否自提<i class="iconfont icon-right-arrow"></i></view>
+          <view class='item-bd'></view>
+        </view>
+        <view class="item">
+          <view class='item-hd' data-index='3' bindtap='showChoose'>商品类型<i class="iconfont icon-right-arrow"></i></view>
+          <view class='item-bd'></view>
+        </view>
+      </view>
+      <view class='mode' hidden='{{isShow == 0}}' bindtap='hideChoose'></view>
+      <view class='choose' hidden='{{isShow != 1}}'>
+        <view class='{{orderStatus == 0 ? "active": ""}} iconfont' data-index='0' bindtap='chooseStatus'>全部</view>
+        <view class='{{orderStatus == 1 ? "active": ""}} iconfont' data-index='1' bindtap='chooseStatus'>待付款</view>
+        <view class='{{orderStatus == 2 ? "active": ""}} iconfont' data-index='2' bindtap='chooseStatus'>待发货</view>
+        <view class='{{orderStatus == 3 ? "active": ""}} iconfont' data-index='3' bindtap='chooseStatus'>待收货</view>
+        <view class='{{orderStatus == 4 ? "active": ""}} iconfont' data-index='4' bindtap='chooseStatus'>待评价</view>
+      </view>
+      <view class='choose' hidden='{{isShow != 2}}'>
+        <view class='{{mentionStatus == 0 ? "active": ""}} iconfont' data-index='0' bindtap='mentionStatus'>全部</view>
+        <view class='{{mentionStatus == 1 ? "active": ""}} iconfont' data-index='1' bindtap='mentionStatus'>是</view>
+        <view class='{{mentionStatus == 2 ? "active": ""}} iconfont' data-index='2' bindtap='mentionStatus'>否</view>
+      </view>
+      <view class='choose' hidden='{{isShow != 3}}'>
+        <view class='{{goodType == 0 ? "active": ""}} iconfont' data-index='0' bindtap='goodType'>全部</view>
+        <view class='{{goodType == 1 ? "active": ""}} iconfont' data-index='1' bindtap='goodType'>团购商品</view>
+        <view class='{{goodType == 2 ? "active": ""}} iconfont' data-index='2' bindtap='goodType'>普通商品</view>
+      </view>
+      <view class='order-list'>
+        <block wx:for='{{show_list}}' wx:key='order_id'>
+          <view class='order'>
+            <view class='order-l'>
+              <image src='{{item.main_picture}}'></image>
+              <view>李思思</view>
+            </view>
+            <view class='order-r'>
+              <view>
+                <text>订单编号:{{item.order_no}}</text>
+                <text class='date'>{{item.createtime}}</text>
+              </view>
+              <view>{{item.good_name}} *{{item.good_num}}</view>
+              <view class='order-address'>地址：{{item.address}}</view>
+              <view wx:if='{{item.notes}}' class='order-note'>{{item.notes}}</view>
+              <view class='order-recipient'>收件人：{{item.contacts}} 13013013010</view>
+              <view>
+                <text class='text-red'>{{item.order_status == 0 ? '待':'已'}}支付{{item.total}}元</text>
+                <button class='weui-btn' wx:if='{{item.order_status == 0}}' plain='true' type='primary' bindtap=''>去支付</button>
+                <button class='weui-btn' wx:if='{{item.order_status == 2}}' plain='true' type='primary' bindtap='confirm_receipt'>确认收货</button>
+                <button class='weui-btn' wx:if='{{item.order_status == 3}}' plain='true' type='primary' bindtap='confirm_receipt'>评价</button>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class='modal' hidden='{{true}}'>
+      <view class='modal-content'>
+        <view class='modal-bd'>
+          <view hidden='{{false}}'>
+            <view class='weui-cell'>
+              <view class='weui-cell__hd'>快递公司</view>
+              <view class='weui-cell__bd'><input placeholder='请输入快递公司'></input></view>
+            </view>
+            <view class='weui-cell'>
+              <view class='weui-cell__hd'>快递单号</view>
+              <view class='weui-cell__bd'><input placeholder='请输入快递单号'></input></view>
+            </view>
+          </view>
+          <view hidden='{{true}}'>
+            <textarea></textarea>
+          </view>
+        </view>
+        <view class='modal-ft'>
+          <view class='modal-cancel'>取消</view>
+          <view class='modal-confirm'>确定</view>
+        </view>
+      </view>
+    </view>
+</view>

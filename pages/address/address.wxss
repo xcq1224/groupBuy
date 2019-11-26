@@ -1,0 +1,14 @@
+.weui-cell{
+  font-size: 28rpx;
+}
+.weui-cell__hd{
+  width: 160rpx;
+}
+.weui-cell__ft i{
+  font-size: 60rpx;
+  color: #ffcc00;
+}
+
+.footer{
+  margin: 80rpx 30rpx;
+}

@@ -1,0 +1,19 @@
+.weui-cell{
+  font-size: 28rpx;
+}
+.weui-cell__hd{
+  width: 76rpx;
+}
+.weui-cell__ft i{
+  font-size: 60rpx;
+  color: #ffcc00;
+}
+.weui-icon-checkbox_circle{
+	display: none;
+}
+.weui-icon-checkbox_circle.active{
+	display: block;
+}
+.footer{
+  margin: 80rpx 30rpx;
+}
